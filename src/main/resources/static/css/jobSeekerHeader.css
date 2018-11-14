@@ -1,0 +1,44 @@
+#header {
+	height: 10%;
+	width: 100%;
+	top: 0%;
+	background-color: #363940;
+	color: #E4E5E8;
+	font-size: 16px;
+	margin: 0% 0% 2% 0%;
+}
+
+#displayName {
+	height: 100%;
+	width: 50%;
+	font-family: "Courier New", Courier, monospace;
+	color: #E4E5E8;
+	margin: -2% 1%;
+}
+
+#profileName {
+	height: 100%;
+	width: 50%;
+	margin: 3% 9%;
+	padding: 2% 2%;
+	text-align: left
+}
+
+#links {
+	position: relative;
+	left: 50%;
+	width: 35%;
+	margin: -4% 0% 1% 0%;
+}
+
+.alink {
+	background-color: #363940;
+	color: #E4E5E8;
+	padding-right: 2%;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 13px;
+	width: 20%;
+	text-decoration: none;
+}

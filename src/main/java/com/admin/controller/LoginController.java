@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.admin.model.LoginModel;
+import com.admin.model.Login;
 
 @Controller
 public class LoginController {
@@ -17,7 +17,7 @@ public class LoginController {
 	
 	@GetMapping("/")
 	public String getLoginPage(Model model) {
-		LoginModel login = new LoginModel();
+		Login login = new Login();
 		model.addAttribute("loginDetails", login);
 		
 		return "login";
@@ -25,9 +25,9 @@ public class LoginController {
 
 	
 	@PostMapping("/login")
-	public String postLogin(@Valid @ModelAttribute("loginDetails") LoginModel adminLoginDetails, BindingResult bindingResult) {
+	public String postLogin(@Valid @ModelAttribute("loginDetails") Login adminLoginDetails, BindingResult bindingResult) {
 	
-		if(!adminLoginDetails.getEmail().equals("admin.gmail.com") && adminLoginDetails.getPassword().equals("admin")){
+		if(!adminLoginDetails.getEmail().equals("admin@gmail.com") && adminLoginDetails.getPassword().equals("admin")){
 		    bindingResult.rejectValue("email", "error.loginDetails", "Invalid Details");
 
 		}
@@ -35,9 +35,14 @@ public class LoginController {
 			return "login";
 		}
 		else {
-			return "profile";
+			return "addSurvey";
 		}
 	
 	}	
+	
+	@GetMapping("/users")
+	public String getUsers() {
+		return "userSearch";
+	}
 
 }

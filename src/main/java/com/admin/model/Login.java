@@ -3,7 +3,7 @@ package com.admin.model;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
-public class LoginModel {
+public class Login {
 
 	
 	@NotEmpty(message="Please enter your Email Id")
