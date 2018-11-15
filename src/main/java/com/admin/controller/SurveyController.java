@@ -5,14 +5,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.admin.entity.Survey;
+
 @Controller
-@RequestMapping("/survey")
-public class Survey {
+public class SurveyController {
 	
-	@GetMapping("/add")
-	public String addSurvey(Model model) {
+	@GetMapping("/survey/add")
+	public String getAddSurvey(Model model) {
 		Survey survey = new Survey();
-		model.addAttribute(survey);
+		model.addAttribute("survey",survey);
 		return "addSurvey";
 	}
 

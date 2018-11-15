@@ -15,11 +15,10 @@ import com.admin.model.Login;
 public class LoginController {
 
 	
-	@GetMapping("/")
+	@GetMapping("/login")
 	public String getLoginPage(Model model) {
 		Login login = new Login();
 		model.addAttribute("loginDetails", login);
-		
 		return "login";
 	}
 
@@ -29,20 +28,20 @@ public class LoginController {
 	
 		if(!adminLoginDetails.getEmail().equals("admin@gmail.com") && adminLoginDetails.getPassword().equals("admin")){
 		    bindingResult.rejectValue("email", "error.loginDetails", "Invalid Details");
-
+ 
 		}
 	    if(bindingResult.hasErrors()) {
 			return "login";
 		}
 		else {
-			return "addSurvey";
+			return "users";
 		}
 	
 	}	
 	
-	@GetMapping("/users")
-	public String getUsers() {
-		return "userSearch";
+	@GetMapping("/logout")
+	public String logoutLink() {
+		return "login";
 	}
-
+	
 }

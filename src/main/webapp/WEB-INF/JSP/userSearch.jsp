@@ -1,8 +1,11 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>jQuery DataTable Tutorial With Bootstrap</title>
+    <title>User Search table</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
 </head>
@@ -18,48 +21,27 @@
                             <td>User Id</td>
                             <td>First Name</td>
                             <td>Last Name</td>
+                            <td>Email</td>
+                            <td>Account Type</td> 
                             <td>Percentile</td>
-                        </tr>
+                         </tr>
                     </thead>
                     <tbody>
-              
-            <tr>
-                <td>1</td>
-                <td>Neha</td>
-                <td>Naik</td>
-                <td>83</td>
-                
-             
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Shishir</td>
-                <td>Shetty</td>
-                <td>75</td>
-         
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Joyson</td>
-                <td>Lewis</td>
-                <td>85</td>
-         
-            </tr>
-             <tr>
-                <td>4</td>
-                <td>Sidd</td>
-                <td>Shah</td>
-                <td>85</td>
-         
-            </tr>
-               <tr>
-                <td>5</td>
-                <td>Sheryl</td>
-                <td>Lewis</td>
-                <td>85</td>
-         
-            </tr>
+                    <c:forEach var="userList" items="${userData}">
+                      <tr>
+                			<td>${userList.userId }</td>
+                			<td>${userList.firstName}</td>
+                			<td>${userList.lastName}</td>
+                			<td>${userList.email}</td>
+                			<td>${userList.accountType}</td>
+                			<td>${userList.score}</td>
+                			
+                			
 
+             
+            			</tr>
+                    </c:forEach>
+                    
                     </tbody>
                 </table>
             </div>
@@ -70,25 +52,7 @@
             src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".table").DataTable({
-                "ordering": true,
-                "searching": true,
-                "paging": true,
-                "columnDefs": [
-                    {/* 
-                        "targets": 3,
-                        "orderData": [3,1], */
-                        	
-                        "searchable": false,
-                        "visible": true
-                    }
-                ],
-                // Ordering by Percentile - Primary Sort and then by FirstName - Secondary Sort
-                "order": [[3, 'desc'],[1,'asc']]
-            });
-        });
-    </script>
+        <script type="text/javascript" src="js/userSearch.js"></script>
+
 </body>
 </html>
