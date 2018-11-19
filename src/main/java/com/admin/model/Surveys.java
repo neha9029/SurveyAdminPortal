@@ -1,58 +1,51 @@
 package com.admin.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 public class Surveys {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int surveyId;
+	private long surveyId;
 	private String surveyName;
-	private String surveyType;
 	private String surveyDescription;
-	private String editedDate;
-	
-	@OneToMany(mappedBy="SurveyQuestions", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-	private List<SurveyQuestions> SurveyQuestion;
-	
-	public int getSurveyId() {
+	private String accountType;
+
+
+	public long getSurveyId() {
 		return surveyId;
 	}
-	public void setSurveyId(int surveyId) {
+	
+	public void setSurveyId(long surveyId) {
 		this.surveyId = surveyId;
 	}
+	
 	public String getSurveyName() {
 		return surveyName;
 	}
+	
 	public void setSurveyName(String surveyName) {
 		this.surveyName = surveyName;
 	}
+
+	public String getAccountType() {
+		return accountType;
+	}
 	
-	public String getSurveyType() {
-		return surveyType;
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
 	}
-	public void setSurveyType(String surveyType) {
-		this.surveyType = surveyType;
-	}
+
 	public String getSurveyDescription() {
 		return surveyDescription;
 	}
+	
 	public void setSurveyDescription(String surveyDescription) {
 		this.surveyDescription = surveyDescription;
 	}
-	public String getEditedDate() {
-		return editedDate;
+
+	@Override
+	public String toString() {
+		return "Surveys [surveyId=" + surveyId + ", surveyName=" + surveyName + ", surveyDescription="
+				+ surveyDescription + ", accountType=" + accountType + "]";
 	}
-	public void setEditedDate(String editedDate) {
-		this.editedDate = editedDate;
-	}
-	
+
 	
 }

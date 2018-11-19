@@ -27,7 +27,7 @@
 	    <%--View Survey  link --%>
      <c:url var ="viewSureyLink" value="/survey/view">
 	 </c:url>
-      <li class="active"><a href="${userLink}">Users</a></li>
+      <li class=""><a href="${pageContext.request.contextPath}/users">Users</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${addSurveyLink}">Survey <span class="caret"></span></a>
         <ul class="dropdown-menu">
       

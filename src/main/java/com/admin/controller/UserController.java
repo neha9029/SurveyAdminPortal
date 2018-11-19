@@ -25,15 +25,14 @@ public class UserController {
 	public String getUserData(Model model) {
 		try {
 			RestTemplate restTemplate = new RestTemplate();
-			List<LinkedHashMap<String, Object>> usersMap = restTemplate.getForObject(REST_SERVICE_URI + "/users/",
-					List.class);
+			List<LinkedHashMap<String, Object>> usersMap = restTemplate.getForObject(REST_SERVICE_URI + "/users/", List.class);
 
 			if (usersMap != null) {
 				List<Users> userList = new ArrayList<>();
 				int i = 1;
 				for (LinkedHashMap<String, Object> map : usersMap) {
-					System.out.println("User : id=" + map.get("userId") + ", Name=" + map.get("firstName") + ", Age="
-							+ map.get("lastName") + ", Salary=" + map.get("email"));
+					System.out.println("User : id=" + map.get("userId") + ", FirstName=" + map.get("firstName") + ", LastName="
+							+ map.get("lastName") + ", Email=" + map.get("email"));
 					;
 					Users user = new Users(Integer.toString(i), (String) map.get("email"),
 							(String) map.get("firstName"), (String) map.get("lastName"),

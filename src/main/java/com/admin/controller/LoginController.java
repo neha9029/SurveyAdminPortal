@@ -34,14 +34,18 @@ public class LoginController {
 			return "login";
 		}
 		else {
-			return "users";
+			return "userSearch";
 		}
 	
 	}	
+	
+
+	
 	
 	@GetMapping("/logout")
 	public String logoutLink() {
 		return "login";
 	}
+	
 	
 }

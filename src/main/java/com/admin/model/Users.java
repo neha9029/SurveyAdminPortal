@@ -11,9 +11,6 @@ public class Users {
 	private int score;
 
 	
-	
-	
-
 
 
 	public Object getUserId() {

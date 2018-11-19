@@ -11,7 +11,7 @@
 	<div id="wholeContainer">
 		<div id="container">
 		<div id="header" class="blockElement">
-			<h2 id="headerTitle"> Admin Login</h2>
+			<h2 id="headerTitle">Admin Login</h2>
 			
 		 </div>
 		 
